@@ -1,2 +1,11 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿namespace BuildScripts;
+
+public static class Program
+{
+    public static int Main(string[] args)
+        => new CakeHost()
+            .AddAssembly(typeof(BuildContext).Assembly)
+            .UseWorkingDirectory("../")
+            .UseContext<BuildContext>()
+            .Run(args);
+}

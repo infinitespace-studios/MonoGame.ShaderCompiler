@@ -401,3 +401,7 @@ FodyWeavers.xsd
 
 
 .vscode
+
+dxc_build
+spirv_build
+artifacts
