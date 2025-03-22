@@ -4,3 +4,6 @@
 [submodule "external/SPIRV-Cross"]
 	path = external/SPIRV-Cross
 	url = https://github.com/KhronosGroup/SPIRV-Cross.git
+[submodule "external/buildscripts"]
+	path = external/buildscripts
+	url = https://github.com/MonoGame/MonoGame.Tool.BuildScripts.git
