@@ -10,7 +10,9 @@ jobs:
       matrix:
         include:
           - os: windows-latest
-            cmake: "-G 'Visual Studio 17 2022' -A x64"
+            cmake: "-C ../external/DirectXShaderCompiler/cmake/caches/PredefinedParams.cmake -G 'Visual Studio 17 2022' -A x64"
+          - os: windows-latest
+            cmake: "-C ../external/DirectXShaderCompiler/cmake/caches/PredefinedParams.cmake -G 'Visual Studio 17 2022' -A ARM"
           - os: ubuntu-latest
             cmake: "-C ../external/DirectXShaderCompiler/cmake/caches/PredefinedParams.cmake"
           - os: macos-latest
