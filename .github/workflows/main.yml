@@ -9,11 +9,11 @@ jobs:
     strategy:
       matrix:
         include:
-          - os: windows-latest,
+          - os: windows-latest
             cmake: "-G 'Visual Studio 16 2019' -A x64"
-          - os: ubuntu-latest,
+          - os: ubuntu-latest
             cmake: "-C ../external/DirectXShaderCompiler/cmake/caches/PredefinedParams.cmake"
-          - os: macos-latest,
+          - os: macos-latest
             cmake: "-DCMAKE_OSX_ARCHITECTURES=\"x86_64;arm64\" -C ../external/DirectXShaderCompiler/cmake/caches/PredefinedParams.cmake"
       fail-fast: false
     steps:
