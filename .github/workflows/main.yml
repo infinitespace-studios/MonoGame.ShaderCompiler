@@ -34,9 +34,12 @@ jobs:
         with:
           submodules: recursive
 
+      - name: Create build directory
+        run: mkdir build_${{ runner.os }}
+
       - name: Build
         run: cmake -B build ${{ matrix.cmake }} -S ../external/DirectXShaderCompiler/
-        working-directory: ./build_${{ runner.os }}
+        working-directory: build_${{ runner.os }}
     
   deploy:
     name: deploy
