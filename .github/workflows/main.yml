@@ -10,7 +10,7 @@ jobs:
       matrix:
         include:
           - os: windows-latest
-            cmake: "-G 'Visual Studio 16 2019' -A x64"
+            cmake: "-G 'Visual Studio 17 2022' -A x64"
           - os: ubuntu-latest
             cmake: "-C ../external/DirectXShaderCompiler/cmake/caches/PredefinedParams.cmake"
           - os: macos-latest
@@ -37,8 +37,12 @@ jobs:
       - name: Create build directory
         run: mkdir build_${{ runner.os }}
 
+      - name: Generate build files
+        run: cmake -B build_${{ runner.os }} ${{ matrix.cmake }} -S ../external/DirectXShaderCompiler/
+        working-directory: build_${{ runner.os }}
+
       - name: Build
-        run: cmake -B build ${{ matrix.cmake }} -S ../external/DirectXShaderCompiler/
+        run: cmake --build build_${{ runner.os }} --config Release
         working-directory: build_${{ runner.os }}
     
   deploy:
