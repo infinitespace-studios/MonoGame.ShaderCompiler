@@ -77,7 +77,7 @@ jobs:
       #   working-directory: build_${{ runner.os }}
 
       - name: Run Cake
-        run: dotnet run --project ./build/Build.csproj --universalBinary=true
+        run: dotnet run --project ./build/build.csproj --universalBinary=true
         env:
           ACTIONS_RUNTIME_TOKEN: ${{ env.ACTIONS_RUNTIME_TOKEN }}
           ACTIONS_RUNTIME_URL: "${{ env.ACTIONS_RUNTIME_URL }}"
