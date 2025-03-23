@@ -5,7 +5,7 @@ namespace BuildScripts;
 [IsDependeeOf(typeof(BuildToolTask))]
 public sealed class BuildLinuxTask : FrostingTask<BuildContext>
 {
-    public override bool ShouldRun(BuildContext context) => context.IsRunningOnMacOs();
+    public override bool ShouldRun(BuildContext context) => context.IsRunningOnLinux();
 
     public override void Run(BuildContext context)
     {
