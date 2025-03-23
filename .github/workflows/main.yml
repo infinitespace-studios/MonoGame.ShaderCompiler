@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   build_windows:
-    name: build-${{ matrix.os }}-${{ matrix.abi }}
+    name: build-${{ matrix.os }}-${{ matrix.platform }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -28,7 +28,7 @@ jobs:
       - name: 'Building'
         run: |
           call utils\hct\hctstart.cmd  ../external/DirectXShaderCompiler build_windows
-          call utils\hct\hctbuild.cmd -$(platform) -Release -show-cmake-log -spirvtest
+          call utils\hct\hctbuild.cmd -${{ matrix.platform }} -Release -show-cmake-log -spirvtest
 
   build_mac_linux:
     name: build-${{ matrix.os }}
