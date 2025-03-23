@@ -6,6 +6,7 @@ jobs:
   build_windows:
     name: build-${{ matrix.os }}-${{ matrix.platform }}
     runs-on: ${{ matrix.os }}
+    timeout-minutes: 120
     strategy:
       matrix:
         include:
