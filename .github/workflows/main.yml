@@ -90,7 +90,7 @@ jobs:
     permissions:
       packages: write
       contents: write
-    needs: [ build_mac_linux, build_windows ]
+    needs: [ build_mac_linux ]
     steps:
       - name: Expose GitHub Runtime
         uses: crazy-max/ghaction-github-runtime@v3
