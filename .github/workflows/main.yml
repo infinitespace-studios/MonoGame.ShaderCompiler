@@ -68,7 +68,7 @@ jobs:
         run: mkdir build_${{ runner.os }}
 
       - name: Generate build files
-        run: cmake -B build_${{ runner.os }} ${{ matrix.cmake }} -DCMAKE_BUILD_TYPE=Release -S ../external/DirectXShaderCompiler/
+        run: cmake ${{ matrix.cmake }} -DCMAKE_BUILD_TYPE=Release -S ../external/DirectXShaderCompiler/
         working-directory: build_${{ runner.os }}
 
       - name: Build
